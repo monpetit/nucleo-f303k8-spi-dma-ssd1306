@@ -1,0 +1,153 @@
+<!DOCTYPE CrossStudio_Project_File>
+<solution Name="nucleo-f303k8-spi-dma-ssd1306" target="8" version="2">
+  <project Name="nucleo-f303k8-spi-dma-ssd1306">
+    <configuration
+      Name="Common"
+      Placement="Flash"
+      Target="STM32F303K8"
+      arm_architecture="v7EM"
+      arm_core_type="Cortex-M4"
+      arm_endian="Little"
+      arm_fp_abi="Hard"
+      arm_fpu_type="FPv4-SP-D16"
+      arm_interwork="No"
+      arm_linker_heap_size="512"
+      arm_linker_process_stack_size="0"
+      arm_linker_stack_size="1024"
+      arm_simulator_memory_simulation_parameter="ROM;0x08000000;0x00010000;RAM;0x20000000;0x00003000"
+      arm_target_debug_interface_type="ADIv5"
+      arm_target_interface_type="SWD"
+      c_preprocessor_definitions="USE_HAL_DRIVER;STM32F303x8;__STM32F3xx_FAMILY;__STM32F303_SUBFAMILY;ARM_MATH_CM4;FLASH_PLACEMENT=1"
+      c_user_include_directories="$(ProjectDir)/../Inc;$(ProjectDir)/../Drivers/STM32F3xx_HAL_Driver/Inc;$(ProjectDir)/../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy;$(ProjectDir)/../Drivers/CMSIS/Device/ST/STM32F3xx/Include;$(ProjectDir)/../Drivers/CMSIS/Include"
+      debug_register_definition_file="$(ProjectDir)/STM32F303x_Registers.xml"
+      debug_target_connection="J-Link"
+      gcc_entry_point="Reset_Handler"
+      linker_memory_map_file="$(ProjectDir)/STM32F303K8_MemoryMap.xml"
+      linker_output_format="hex"
+      linker_printf_fmt_level="long long"
+      linker_printf_fp_enabled="Yes"
+      linker_printf_width_precision_supported="Yes"
+      linker_section_placement_file="$(ProjectDir)/flash_placement.xml"
+      macros="DeviceHeaderFile=$(PackagesDir)/STM32F3xx/CMSIS/Device/Include/stm32f3xx.h;DeviceLibraryIdentifier=M4lf;DeviceSystemFile=$(PackagesDir)/STM32F3xx/CMSIS/Device/Source/system_stm32f3xx.c;DeviceVectorsFile=$(PackagesDir)/STM32F3xx/Source/STM32F303x_Vectors.s;DeviceFamily=STM32F3xx;DeviceSubFamily=STM32F303;Target=STM32F303K8;Placement=Flash"
+      package_dependencies="STM32F3xx"
+      project_directory=""
+      project_type="Executable"
+      target_reset_script="Reset();"
+      target_trace_initialize_script="EnableTrace(&quot;$(TraceInterfaceType)&quot;)" />
+    <folder Name="Script Files">
+      <file file_name="STM32F3xx_Target.js">
+        <configuration Name="Common" file_type="Reset Script" />
+      </file>
+      <configuration Name="Common" macros="Target=STM32F303K8" />
+    </folder>
+    <folder Name="Application">
+      <folder Name="SES">
+        <file file_name="../Drivers/CMSIS/Device/ST/STM32F3xx/Source/Templates/ses/STM32F3xx_Startup.s" />
+        <file file_name="../Drivers/CMSIS/Device/ST/STM32F3xx/Source/Templates/ses/STM32F303x_Vectors.s" />
+        <file file_name="../Drivers/CMSIS/Device/ST/STM32F3xx/Source/Templates/ses/thumb_crt0.s" />
+      </folder>
+      <folder Name="User">
+        <file file_name="../Src/dma.c" />
+        <file file_name="../Src/glcdfont.c" />
+        <file file_name="../Src/gpio.c" />
+        <file file_name="../Src/i2c.c" />
+        <file file_name="../Src/main.c" />
+        <file file_name="../Src/spi.c" />
+        <file file_name="../Src/ssd1306.c" />
+        <file file_name="../Src/stm32f3xx_hal_msp.c" />
+        <file file_name="../Src/stm32f3xx_it.c" />
+        <file file_name="../Src/tim.c" />
+        <file file_name="../Src/usart.c" />
+      </folder>
+    </folder>
+    <folder Name="Drivers">
+      <folder Name="CMSIS">
+        <file file_name="../Drivers/CMSIS/Device/ST/STM32F3xx/Source/Templates/system_stm32f3xx.c" />
+      </folder>
+      <folder Name="STM32F3xx_HAL_Driver">
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_adc.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_adc_ex.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_can.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cec.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_comp.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_crc.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_crc_ex.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_dac.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_dac_ex.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_dma.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_flash.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_flash_ex.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_hrtim.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c_ex.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2s.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2s_ex.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_irda.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_iwdg.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_nand.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_nor.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_opamp.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_opamp_ex.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pccard.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pcd.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pcd_ex.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pwr.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pwr_ex.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rtc.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rtc_ex.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_sdadc.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_smartcard.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_smartcard_ex.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_smbus.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_spi.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_spi_ex.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_sram.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim_ex.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tsc.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart_ex.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_usart.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_wwdg.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_ll_adc.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_ll_comp.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_ll_crc.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_ll_dac.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_ll_dma.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_ll_exti.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_ll_fmc.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_ll_gpio.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_ll_hrtim.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_ll_i2c.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_ll_opamp.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_ll_pwr.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_ll_rcc.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_ll_rtc.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_ll_spi.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_ll_tim.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_ll_usart.c" />
+        <file file_name="../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_ll_utils.c" />
+      </folder>
+    </folder>
+    <configuration
+      Name="Release"
+      build_debug_information="No"
+      gcc_optimization_level="Optimize For Size"
+      linker_strip_debug_information="Yes" />
+  </project>
+  <configuration
+    Name="Debug"
+    c_preprocessor_definitions="DEBUG"
+    gcc_debugging_level="Level 3"
+    gcc_optimization_level="None" />
+  <configuration
+    Name="Release"
+    c_preprocessor_definitions="NDEBUG"
+    gcc_debugging_level="Level 1"
+    gcc_optimization_level="Level 1" />
+</solution>
